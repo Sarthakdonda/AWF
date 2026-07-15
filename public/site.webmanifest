@@ -1,0 +1,9 @@
+{
+  "name": "Sarthak Donda | DevOps Engineer",
+  "short_name": "Sarthak Donda",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
