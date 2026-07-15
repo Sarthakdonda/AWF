@@ -18,12 +18,15 @@ function PluginCaseStudy({ project }) {
         <header><span>Live network / Gujarat</span><span className="plugin-live"><i /> 24 stations online</span></header>
         <div className="network-map">
           <div className="network-grid" />
+          <div className="energy-radar"><i /><i /><i /></div>
           <svg viewBox="0 0 1200 570" preserveAspectRatio="none" aria-hidden="true"><path d="M80 390 C220 390 210 175 375 175 S530 390 680 390 800 160 960 160 1050 290 1130 290"/><path className="energy-flow" d="M80 390 C220 390 210 175 375 175 S530 390 680 390 800 160 960 160 1050 290 1130 290"/><circle r="5"><animateMotion dur="5s" repeatCount="indefinite" path="M80 390 C220 390 210 175 375 175 S530 390 680 390 800 160 960 160 1050 290 1130 290"/></circle></svg>
           <div className="map-station station-a"><span><Zap /></span><strong>Ahmedabad One</strong><small>8 / 10 chargers available</small><em><i /> Online</em></div>
           <div className="map-station station-b"><span><Zap /></span><strong>Vadodara Hub</strong><small>5 / 6 chargers available</small><em><i /> Online</em></div>
           <div className="map-station station-c"><span><Zap /></span><strong>Surat Central</strong><small>12 / 14 chargers available</small><em><i /> Online</em></div>
           <div className="charging-session"><div className="charge-ring"><BatteryCharging /><span>72<small>%</small></span></div><div><small>ACTIVE SESSION</small><strong>Charging in progress</strong><span>32.4 kWh · ₹486.00</span></div></div>
           <div className="booking-float"><CalendarCheck /><div><small>NEXT BOOKING</small><strong>Today, 16:30</strong><span>CCS2 · Bay 04</span></div><b>Confirmed</b></div>
+          <div className="network-activity"><span>LIVE ACTIVITY</span><p><i /> Session #482 started</p><p><i /> Bay 04 reserved</p><p><i /> Payment verified</p></div>
+          <div className="power-meter"><span>NETWORK LOAD</span><div><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /></div><b>68.4 kW</b></div>
           <div className="network-stats"><span><MapPin />24 stations</span><span><BatteryCharging />186 charge points</span><span><Zap />91% uptime</span></div>
         </div>
       </section>
