@@ -12,6 +12,10 @@ function Hero({ profile }) {
         </div>
 
         <div className="hero-layout">
+          <div className="hero-blueprint" aria-hidden="true">
+            <span /><span /><span />
+            <i /><i />
+          </div>
           <div className="hero-copy">
             <p className="hero-name">Entry-level DevOps engineer</p>
             <h1 id="hero-title">
@@ -22,12 +26,13 @@ function Hero({ profile }) {
           </div>
 
           <aside className="hero-profile" id="summary" aria-labelledby="hero-profile-title">
+            <div className="hero-profile-orbit" aria-hidden="true"><span /><span /><i /></div>
             <div className="hero-profile-heading">
               <span id="hero-profile-title">About me</span>
               <span>01</span>
             </div>
             <p className="hero-profile-lead">
-              Computer Engineering student building practical experience through cloud and automation projects.
+              Building practical cloud and automation skills through real, working projects.
             </p>
             <p>
               I bring a structured approach to problem-solving, reliable delivery, and continuous learning. I am
