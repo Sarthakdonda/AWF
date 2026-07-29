@@ -88,7 +88,7 @@ function Projects({ projects }) {
         <h2 id="projects-title">Selected projects</h2>
       </header>
 
-      <div className={`repo-search-shell${isSearchOpen ? " is-open" : ""}`} data-reveal>
+      <div className={`repo-search-shell${isSearchOpen ? " is-open" : ""}`}>
         <button
           className="repo-search-trigger"
           type="button"
