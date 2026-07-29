@@ -30,11 +30,6 @@ function Projects({ projects }) {
 
   const searchRepositories = async (searchTerm) => {
     const normalizedQuery = searchTerm.trim();
-    if (!normalizedQuery) {
-      searchInputRef.current?.focus();
-      return;
-    }
-
     setSubmittedQuery(normalizedQuery);
     setStatus("loading");
     setError("");
@@ -52,9 +47,11 @@ function Projects({ projects }) {
       }
 
       const data = await response.json();
-      const matches = data.filter((repo) =>
-        repo.name.toLowerCase().includes(normalizedQuery.toLowerCase()),
-      );
+      const matches = normalizedQuery
+        ? data.filter((repo) =>
+          repo.name.toLowerCase().includes(normalizedQuery.toLowerCase()),
+        )
+        : data;
       setRepos(matches);
       setStatus(matches.length ? "success" : "empty");
     } catch (requestError) {
@@ -94,7 +91,14 @@ function Projects({ projects }) {
           type="button"
           aria-expanded={isSearchOpen}
           aria-controls="github-repository-search"
-          onClick={() => (isSearchOpen ? closeSearch() : setIsSearchOpen(true))}
+          onClick={() => {
+            if (isSearchOpen) {
+              closeSearch();
+            } else {
+              setIsSearchOpen(true);
+              searchRepositories("");
+            }
+          }}
         >
           <span className="repo-search-icon"><Github size={22} aria-hidden="true" /></span>
           <span>
@@ -121,8 +125,10 @@ function Projects({ projects }) {
                 placeholder="Try “portfolio” or “plugin”"
                 autoComplete="off"
               />
-              <button type="submit" disabled={status === "loading" || !query.trim()}>
-                {status === "loading" ? <DotLoader /> : <>Search <ArrowRight size={16} /></>}
+              <button type="submit" disabled={status === "loading"}>
+                {status === "loading"
+                  ? <DotLoader />
+                  : <>{query.trim() ? "Search" : "Show all"} <ArrowRight size={16} /></>}
               </button>
             </form>
 
